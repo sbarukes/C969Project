@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace C969Project
 {
-    public partial class AddCusForm : Form
+    public partial class UpdateCusForm : Form
     {
-        public AddCusForm()
+        public UpdateCusForm()
         {
             InitializeComponent();
         }
@@ -63,8 +63,15 @@ namespace C969Project
                     cityID = 13;
                     break;
             }
-
-            Data.addCustomer(nameText.Text, cityID, numText.Text, addText.Text, pCodeText.Text);
+            Data.updateCus(
+                Convert.ToInt32(currentCusID.Text),
+                nameText.Text,
+                Convert.ToInt32(currentAddressID.Text),
+                numText.Text,
+                addText.Text,
+                pCodeText.Text,
+                cityID
+                );
             this.Close();
         }
 

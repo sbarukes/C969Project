@@ -32,15 +32,15 @@
             this.customerLabel = new System.Windows.Forms.Label();
             this.appLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.delCusButton = new System.Windows.Forms.Button();
+            this.upCusButton = new System.Windows.Forms.Button();
+            this.addCusButton = new System.Windows.Forms.Button();
             this.cusDataView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.calDataView = new System.Windows.Forms.DataGridView();
             this.calLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.addCusButton = new System.Windows.Forms.Button();
-            this.upCusButton = new System.Windows.Forms.Button();
-            this.delCusButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -89,6 +89,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 263);
             this.panel1.TabIndex = 4;
+            // 
+            // delCusButton
+            // 
+            this.delCusButton.Location = new System.Drawing.Point(439, 204);
+            this.delCusButton.Name = "delCusButton";
+            this.delCusButton.Size = new System.Drawing.Size(75, 23);
+            this.delCusButton.TabIndex = 3;
+            this.delCusButton.Text = "Delete";
+            this.delCusButton.UseVisualStyleBackColor = true;
+            this.delCusButton.Click += new System.EventHandler(this.delCusButton_Click);
+            // 
+            // upCusButton
+            // 
+            this.upCusButton.Location = new System.Drawing.Point(337, 203);
+            this.upCusButton.Name = "upCusButton";
+            this.upCusButton.Size = new System.Drawing.Size(75, 23);
+            this.upCusButton.TabIndex = 2;
+            this.upCusButton.Text = "Update";
+            this.upCusButton.UseVisualStyleBackColor = true;
+            this.upCusButton.Click += new System.EventHandler(this.upCusButton_Click);
+            // 
+            // addCusButton
+            // 
+            this.addCusButton.Location = new System.Drawing.Point(238, 204);
+            this.addCusButton.Name = "addCusButton";
+            this.addCusButton.Size = new System.Drawing.Size(75, 23);
+            this.addCusButton.TabIndex = 1;
+            this.addCusButton.Text = "Add";
+            this.addCusButton.UseVisualStyleBackColor = true;
+            this.addCusButton.Click += new System.EventHandler(this.addCusButton_Click);
             // 
             // cusDataView
             // 
@@ -140,33 +170,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(533, 379);
             this.panel3.TabIndex = 7;
-            // 
-            // addCusButton
-            // 
-            this.addCusButton.Location = new System.Drawing.Point(238, 204);
-            this.addCusButton.Name = "addCusButton";
-            this.addCusButton.Size = new System.Drawing.Size(75, 23);
-            this.addCusButton.TabIndex = 1;
-            this.addCusButton.Text = "Add";
-            this.addCusButton.UseVisualStyleBackColor = true;
-            // 
-            // upCusButton
-            // 
-            this.upCusButton.Location = new System.Drawing.Point(337, 203);
-            this.upCusButton.Name = "upCusButton";
-            this.upCusButton.Size = new System.Drawing.Size(75, 23);
-            this.upCusButton.TabIndex = 2;
-            this.upCusButton.Text = "Update";
-            this.upCusButton.UseVisualStyleBackColor = true;
-            // 
-            // delCusButton
-            // 
-            this.delCusButton.Location = new System.Drawing.Point(439, 204);
-            this.delCusButton.Name = "delCusButton";
-            this.delCusButton.Size = new System.Drawing.Size(75, 23);
-            this.delCusButton.TabIndex = 3;
-            this.delCusButton.Text = "Delete";
-            this.delCusButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

@@ -48,5 +48,34 @@ namespace C969Project
             dataGridView1.DataSource = appDS.Tables[0];
             Data.getConnection().Close();
         }
+
+        private void addCusButton_Click(object sender, EventArgs e)
+        {
+            AddCusForm add = new AddCusForm();
+            add.ShowDialog();
+        }
+
+        private void upCusButton_Click(object sender, EventArgs e)
+        {
+            UpdateCusForm upForm = new UpdateCusForm();
+            upForm.currentCusID.Text = cusDataView.CurrentRow.Cells[0].Value.ToString();
+            upForm.currentAddressID.Text = cusDataView.CurrentRow.Cells[3].Value.ToString();
+            upForm.nameText.Text = cusDataView.CurrentRow.Cells[1].Value.ToString();
+            upForm.addText.Text = cusDataView.CurrentRow.Cells[4].Value.ToString();
+            upForm.numText.Text = cusDataView.CurrentRow.Cells[7].Value.ToString();
+            upForm.pCodeText.Text = cusDataView.CurrentRow.Cells[6].Value.ToString();
+            upForm.CityListBox.SelectedItem = cusDataView.CurrentRow.Cells[9].Value.ToString();
+            upForm.ShowDialog();
+        }
+
+        private void delCusButton_Click(object sender, EventArgs e)
+        {
+            string delCus = $"DELETE FROM customer WHERE customerId = '{Convert.ToInt32(cusDataView.CurrentRow.Cells[0].Value.ToString())}'";
+            MySqlConnection con = Data.getConnection();
+            MySqlCommand com = new MySqlCommand(delCus, con);
+            con.Open();
+            com.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
