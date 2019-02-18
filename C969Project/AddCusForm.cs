@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace C969Project
 {
-    public partial class Form1 : Form
+    public partial class AddCusForm : Form
     {
-        public Form1()
+        public AddCusForm()
         {
             InitializeComponent();
         }
