@@ -41,6 +41,9 @@
             this.calDataView = new System.Windows.Forms.DataGridView();
             this.calLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.addAppButton = new System.Windows.Forms.Button();
+            this.upAppButton = new System.Windows.Forms.Button();
+            this.delAppButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -131,6 +134,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.delAppButton);
+            this.panel2.Controls.Add(this.upAppButton);
+            this.panel2.Controls.Add(this.addAppButton);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(70, 585);
             this.panel2.Name = "panel2";
@@ -170,6 +176,33 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(533, 379);
             this.panel3.TabIndex = 7;
+            // 
+            // addAppButton
+            // 
+            this.addAppButton.Location = new System.Drawing.Point(238, 200);
+            this.addAppButton.Name = "addAppButton";
+            this.addAppButton.Size = new System.Drawing.Size(75, 23);
+            this.addAppButton.TabIndex = 2;
+            this.addAppButton.Text = "Add";
+            this.addAppButton.UseVisualStyleBackColor = true;
+            // 
+            // upAppButton
+            // 
+            this.upAppButton.Location = new System.Drawing.Point(337, 200);
+            this.upAppButton.Name = "upAppButton";
+            this.upAppButton.Size = new System.Drawing.Size(75, 23);
+            this.upAppButton.TabIndex = 4;
+            this.upAppButton.Text = "Update";
+            this.upAppButton.UseVisualStyleBackColor = true;
+            // 
+            // delAppButton
+            // 
+            this.delAppButton.Location = new System.Drawing.Point(439, 200);
+            this.delAppButton.Name = "delAppButton";
+            this.delAppButton.Size = new System.Drawing.Size(75, 23);
+            this.delAppButton.TabIndex = 5;
+            this.delAppButton.Text = "Delete";
+            this.delAppButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -212,5 +245,8 @@
         private System.Windows.Forms.Button delCusButton;
         private System.Windows.Forms.Button upCusButton;
         private System.Windows.Forms.Button addCusButton;
+        private System.Windows.Forms.Button delAppButton;
+        private System.Windows.Forms.Button upAppButton;
+        private System.Windows.Forms.Button addAppButton;
     }
 }
