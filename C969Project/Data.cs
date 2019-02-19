@@ -10,12 +10,22 @@ namespace C969Project
 {
     class Data
     {
-        int currentCustomerID = 0;
+        static int currentUserID = 0;
 
         static public MySqlConnection getConnection()
         {
             MySqlConnection con = new MySqlConnection("server=52.206.157.109;uid=U05dEG;database=U05dEG;pwd=53688472726");
             return con;
+        }
+
+        static public void setCurrentUser(int id)
+        {
+            currentUserID = id;
+        }
+
+        static public int getCurrentUser()
+        {
+            return currentUserID;
         }
 
         static public int createNewID(string table)

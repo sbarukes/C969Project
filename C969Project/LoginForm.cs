@@ -34,6 +34,10 @@ namespace C969Project
 
             if (read.HasRows)
             {
+                while (read.Read())
+                {
+                    Data.setCurrentUser(Convert.ToInt32(read.GetString(0)));
+                }
                 MainForm mf = new MainForm();
                 mf.ShowDialog();
                 this.Close();
