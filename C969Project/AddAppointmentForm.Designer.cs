@@ -272,7 +272,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddAppointmentForm";
-            this.Text = "AddAppointmentForm";
+            this.Text = "Appointment Scheduler";
             this.ResumeLayout(false);
             this.PerformLayout();
 

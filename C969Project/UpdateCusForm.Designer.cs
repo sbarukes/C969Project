@@ -207,7 +207,7 @@
             this.Controls.Add(this.CityListBox);
             this.Controls.Add(this.label1);
             this.Name = "UpdateCusForm";
-            this.Text = "UpdateCusForm";
+            this.Text = "Appointment Scheduler";
             this.ResumeLayout(false);
             this.PerformLayout();
 
