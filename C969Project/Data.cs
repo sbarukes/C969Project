@@ -104,5 +104,23 @@ namespace C969Project
             con.Close();
         }
 
+        static public void addAppointment(int cusid, string title, string description, string location, string contact, string url, DateTime start, DateTime end, string type, int userid)
+        {
+            MySqlConnection con = getConnection();
+            DateTime dateToAdd = DateTime.Now;
+            start.ToUniversalTime();
+            end.ToUniversalTime();
+
+            string sqlFormattedDateEnd = end.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateStart = start.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateAdd = dateToAdd.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string add = $"INSERT INTO appointment(appointmentId, customerId, title, description, location, contact, url, start, end, createDate, createdBy, lastUpdate, lastUpdateBy, type, userId) VALUES ('{createNewID("appointment")}', '{cusid}', '{title}', '{description}', '{location}', '{contact}', '{url}', '{sqlFormattedDateStart}', '{sqlFormattedDateEnd}', '{sqlFormattedDateAdd}', '{"test"}', '{sqlFormattedDateAdd}', '{"test"}', '{type}', '{userid}')";
+
+            MySqlCommand com = new MySqlCommand(add, con);
+            con.Open();
+            com.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
 }

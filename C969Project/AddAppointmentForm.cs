@@ -16,5 +16,15 @@ namespace C969Project
         {
             InitializeComponent();
         }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            DateTime sdt = addDateTimePickStart.Value.ToUniversalTime();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

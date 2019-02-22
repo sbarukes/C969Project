@@ -37,17 +37,17 @@
             this.addCusButton = new System.Windows.Forms.Button();
             this.cusDataView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.delAppButton = new System.Windows.Forms.Button();
+            this.upAppButton = new System.Windows.Forms.Button();
+            this.addAppButton = new System.Windows.Forms.Button();
+            this.appDataGridView = new System.Windows.Forms.DataGridView();
             this.calDataView = new System.Windows.Forms.DataGridView();
             this.calLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.addAppButton = new System.Windows.Forms.Button();
-            this.upAppButton = new System.Windows.Forms.Button();
-            this.delAppButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calDataView)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -137,19 +137,47 @@
             this.panel2.Controls.Add(this.delAppButton);
             this.panel2.Controls.Add(this.upAppButton);
             this.panel2.Controls.Add(this.addAppButton);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.appDataGridView);
             this.panel2.Location = new System.Drawing.Point(70, 585);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(579, 271);
             this.panel2.TabIndex = 5;
             // 
-            // dataGridView1
+            // delAppButton
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(509, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.delAppButton.Location = new System.Drawing.Point(439, 200);
+            this.delAppButton.Name = "delAppButton";
+            this.delAppButton.Size = new System.Drawing.Size(75, 23);
+            this.delAppButton.TabIndex = 5;
+            this.delAppButton.Text = "Delete";
+            this.delAppButton.UseVisualStyleBackColor = true;
+            // 
+            // upAppButton
+            // 
+            this.upAppButton.Location = new System.Drawing.Point(337, 200);
+            this.upAppButton.Name = "upAppButton";
+            this.upAppButton.Size = new System.Drawing.Size(75, 23);
+            this.upAppButton.TabIndex = 4;
+            this.upAppButton.Text = "Update";
+            this.upAppButton.UseVisualStyleBackColor = true;
+            // 
+            // addAppButton
+            // 
+            this.addAppButton.Location = new System.Drawing.Point(238, 200);
+            this.addAppButton.Name = "addAppButton";
+            this.addAppButton.Size = new System.Drawing.Size(75, 23);
+            this.addAppButton.TabIndex = 2;
+            this.addAppButton.Text = "Add";
+            this.addAppButton.UseVisualStyleBackColor = true;
+            this.addAppButton.Click += new System.EventHandler(this.addAppButton_Click);
+            // 
+            // appDataGridView
+            // 
+            this.appDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appDataGridView.Location = new System.Drawing.Point(32, 35);
+            this.appDataGridView.Name = "appDataGridView";
+            this.appDataGridView.Size = new System.Drawing.Size(509, 150);
+            this.appDataGridView.TabIndex = 0;
             // 
             // calDataView
             // 
@@ -177,33 +205,6 @@
             this.panel3.Size = new System.Drawing.Size(533, 379);
             this.panel3.TabIndex = 7;
             // 
-            // addAppButton
-            // 
-            this.addAppButton.Location = new System.Drawing.Point(238, 200);
-            this.addAppButton.Name = "addAppButton";
-            this.addAppButton.Size = new System.Drawing.Size(75, 23);
-            this.addAppButton.TabIndex = 2;
-            this.addAppButton.Text = "Add";
-            this.addAppButton.UseVisualStyleBackColor = true;
-            // 
-            // upAppButton
-            // 
-            this.upAppButton.Location = new System.Drawing.Point(337, 200);
-            this.upAppButton.Name = "upAppButton";
-            this.upAppButton.Size = new System.Drawing.Size(75, 23);
-            this.upAppButton.TabIndex = 4;
-            this.upAppButton.Text = "Update";
-            this.upAppButton.UseVisualStyleBackColor = true;
-            // 
-            // delAppButton
-            // 
-            this.delAppButton.Location = new System.Drawing.Point(439, 200);
-            this.delAppButton.Name = "delAppButton";
-            this.delAppButton.Size = new System.Drawing.Size(75, 23);
-            this.delAppButton.TabIndex = 5;
-            this.delAppButton.Text = "Delete";
-            this.delAppButton.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,7 +223,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calDataView)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.DataGridView calDataView;
         private System.Windows.Forms.Label calLabel;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView appDataGridView;
         private System.Windows.Forms.Button delCusButton;
         private System.Windows.Forms.Button upCusButton;
         private System.Windows.Forms.Button addCusButton;

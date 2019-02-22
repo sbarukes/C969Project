@@ -46,9 +46,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.appLocText = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.addDateTimePickStart = new System.Windows.Forms.DateTimePicker();
+            this.updateDateTimePickStart = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.addDateTimePickEnd = new System.Windows.Forms.DateTimePicker();
+            this.updateDateTimePickEnd = new System.Windows.Forms.DateTimePicker();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -202,12 +202,12 @@
             this.label10.TabIndex = 27;
             this.label10.Text = "Start Time:";
             // 
-            // addDateTimePickStart
+            // updateDateTimePickStart
             // 
-            this.addDateTimePickStart.Location = new System.Drawing.Point(146, 373);
-            this.addDateTimePickStart.Name = "addDateTimePickStart";
-            this.addDateTimePickStart.Size = new System.Drawing.Size(200, 20);
-            this.addDateTimePickStart.TabIndex = 28;
+            this.updateDateTimePickStart.Location = new System.Drawing.Point(146, 373);
+            this.updateDateTimePickStart.Name = "updateDateTimePickStart";
+            this.updateDateTimePickStart.Size = new System.Drawing.Size(200, 20);
+            this.updateDateTimePickStart.TabIndex = 28;
             // 
             // label11
             // 
@@ -218,12 +218,12 @@
             this.label11.TabIndex = 29;
             this.label11.Text = "End Time:";
             // 
-            // addDateTimePickEnd
+            // updateDateTimePickEnd
             // 
-            this.addDateTimePickEnd.Location = new System.Drawing.Point(461, 373);
-            this.addDateTimePickEnd.Name = "addDateTimePickEnd";
-            this.addDateTimePickEnd.Size = new System.Drawing.Size(200, 20);
-            this.addDateTimePickEnd.TabIndex = 30;
+            this.updateDateTimePickEnd.Location = new System.Drawing.Point(461, 373);
+            this.updateDateTimePickEnd.Name = "updateDateTimePickEnd";
+            this.updateDateTimePickEnd.Size = new System.Drawing.Size(200, 20);
+            this.updateDateTimePickEnd.TabIndex = 30;
             // 
             // saveBtn
             // 
@@ -250,9 +250,9 @@
             this.ClientSize = new System.Drawing.Size(673, 491);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.addDateTimePickEnd);
+            this.Controls.Add(this.updateDateTimePickEnd);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.addDateTimePickStart);
+            this.Controls.Add(this.updateDateTimePickStart);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.appLocText);
             this.Controls.Add(this.label6);
@@ -298,9 +298,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox appLocText;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker addDateTimePickStart;
+        private System.Windows.Forms.DateTimePicker updateDateTimePickStart;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker addDateTimePickEnd;
+        private System.Windows.Forms.DateTimePicker updateDateTimePickEnd;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
     }
