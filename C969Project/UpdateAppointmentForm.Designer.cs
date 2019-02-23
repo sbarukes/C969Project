@@ -204,6 +204,7 @@
             // 
             // updateDateTimePickStart
             // 
+            this.updateDateTimePickStart.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
             this.updateDateTimePickStart.Location = new System.Drawing.Point(146, 373);
             this.updateDateTimePickStart.Name = "updateDateTimePickStart";
             this.updateDateTimePickStart.Size = new System.Drawing.Size(200, 20);
@@ -220,6 +221,7 @@
             // 
             // updateDateTimePickEnd
             // 
+            this.updateDateTimePickEnd.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
             this.updateDateTimePickEnd.Location = new System.Drawing.Point(461, 373);
             this.updateDateTimePickEnd.Name = "updateDateTimePickEnd";
             this.updateDateTimePickEnd.Size = new System.Drawing.Size(200, 20);

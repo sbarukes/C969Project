@@ -26,5 +26,10 @@ namespace C969Project
         {
             this.Close();
         }
+
+        private void AddAppointmentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

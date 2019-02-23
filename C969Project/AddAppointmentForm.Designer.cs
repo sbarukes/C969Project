@@ -153,6 +153,7 @@
             // 
             // addDateTimePickStart
             // 
+            this.addDateTimePickStart.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
             this.addDateTimePickStart.Location = new System.Drawing.Point(124, 363);
             this.addDateTimePickStart.Name = "addDateTimePickStart";
             this.addDateTimePickStart.Size = new System.Drawing.Size(200, 20);
@@ -178,6 +179,7 @@
             // 
             // addDateTimePickEnd
             // 
+            this.addDateTimePickEnd.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
             this.addDateTimePickEnd.Location = new System.Drawing.Point(449, 363);
             this.addDateTimePickEnd.Name = "addDateTimePickEnd";
             this.addDateTimePickEnd.Size = new System.Drawing.Size(200, 20);
@@ -275,6 +277,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddAppointmentForm";
             this.Text = "Appointment Scheduler";
+            this.Load += new System.EventHandler(this.AddAppointmentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
