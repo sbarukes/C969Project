@@ -114,9 +114,37 @@ namespace C969Project
             string sqlFormattedDateEnd = end.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string sqlFormattedDateStart = start.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string sqlFormattedDateAdd = dateToAdd.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string add = $"INSERT INTO appointment(appointmentId, customerId, title, description, location, contact, url, start, end, createDate, createdBy, lastUpdate, lastUpdateBy, type, userId) VALUES ('{createNewID("appointment")}', '{cusid}', '{title}', '{description}', '{location}', '{contact}', '{url}', '{sqlFormattedDateStart}', '{sqlFormattedDateEnd}', '{sqlFormattedDateAdd}', '{"test"}', '{sqlFormattedDateAdd}', '{"test"}', '{type}', '{userid}')";
+            string add = $"INSERT INTO appointment(appointmentId, customerId, title, description, location, contact, url, start, end, createDate, createdBy, lastUpdate, lastUpdateBy, type, userId) VALUES ('{createNewID("appointment")}', '{cusid}', '{title}', '{description}', '{location}', '{contact}', '{url}', '{sqlFormattedDateStart}', '{sqlFormattedDateEnd}', '{sqlFormattedDateAdd}', 'test', '{sqlFormattedDateAdd}', 'test', '{type}', '{userid}')";
 
             MySqlCommand com = new MySqlCommand(add, con);
+            con.Open();
+            com.ExecuteNonQuery();
+            con.Close();
+        }
+
+        static public void updateAppointment(int appID, string title, string description, string location, string contact, string url, DateTime start, DateTime end, string type)
+        {
+            MySqlConnection con = getConnection();
+            DateTime dateToAdd = DateTime.Now;
+            start.ToUniversalTime();
+            end.ToUniversalTime();
+
+            string sqlFormattedDateEnd = end.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateStart = start.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateAdd = dateToAdd.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string update = $"UPDATE appointment /n" +
+                $"SET title = '{title}', /n" +
+                $"description = '{description}', /n" +
+                $"location = '{location}', /n" +
+                $"contact = '{contact}', /n" +
+                $"url = '{url}', /n" +
+                $"start = '{sqlFormattedDateStart}', /n" +
+                $"end = '{sqlFormattedDateEnd}', /n" +
+                $"lastUpdate = '{sqlFormattedDateAdd}', /n" +
+                $"lastUpdateBy = 'test', /n" +
+                $"type = '{type}'";
+
+            MySqlCommand com = new MySqlCommand(update, con);
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
