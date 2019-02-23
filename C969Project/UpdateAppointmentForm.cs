@@ -16,5 +16,24 @@ namespace C969Project
         {
             InitializeComponent();
         }
+
+        private void UpdateAppointmentForm_Load(object sender, EventArgs e)
+        {
+            updateTimePickerStart.Format = DateTimePickerFormat.Time;
+            updateTimePickerStart.ShowUpDown = true;
+            updateTimePickerEnd.Format = DateTimePickerFormat.Time;
+            updateTimePickerEnd.ShowUpDown = true;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            DateTime dateTimeToUploadStart = updateDateTimePickStart.Value.Date + updateTimePickerStart.Value.TimeOfDay;
+            DateTime dateTimeToUploadEnd = updateDateTimePickEnd.Value.Date + updateTimePickerEnd.Value.TimeOfDay;
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

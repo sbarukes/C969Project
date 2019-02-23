@@ -51,6 +51,10 @@
             this.updateDateTimePickEnd = new System.Windows.Forms.DateTimePicker();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.updateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.updateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -200,7 +204,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 27;
-            this.label10.Text = "Start Time:";
+            this.label10.Text = "Start Date:";
             // 
             // updateDateTimePickStart
             // 
@@ -217,7 +221,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 29;
-            this.label11.Text = "End Time:";
+            this.label11.Text = "End Date:";
             // 
             // updateDateTimePickEnd
             // 
@@ -235,6 +239,7 @@
             this.saveBtn.TabIndex = 31;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // cancelBtn
             // 
@@ -244,12 +249,49 @@
             this.cancelBtn.TabIndex = 32;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(382, 406);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "End Time:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(63, 405);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Start Time:";
+            // 
+            // updateTimePickerEnd
+            // 
+            this.updateTimePickerEnd.Location = new System.Drawing.Point(461, 399);
+            this.updateTimePickerEnd.Name = "updateTimePickerEnd";
+            this.updateTimePickerEnd.Size = new System.Drawing.Size(118, 20);
+            this.updateTimePickerEnd.TabIndex = 34;
+            // 
+            // updateTimePickerStart
+            // 
+            this.updateTimePickerStart.Location = new System.Drawing.Point(146, 400);
+            this.updateTimePickerStart.Name = "updateTimePickerStart";
+            this.updateTimePickerStart.Size = new System.Drawing.Size(118, 20);
+            this.updateTimePickerStart.TabIndex = 33;
             // 
             // UpdateAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 491);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.updateTimePickerEnd);
+            this.Controls.Add(this.updateTimePickerStart);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.updateDateTimePickEnd);
@@ -275,6 +317,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UpdateAppointmentForm";
             this.Text = "Appointment Scheduler";
+            this.Load += new System.EventHandler(this.UpdateAppointmentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +348,9 @@
         private System.Windows.Forms.DateTimePicker updateDateTimePickEnd;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker updateTimePickerEnd;
+        private System.Windows.Forms.DateTimePicker updateTimePickerStart;
     }
 }

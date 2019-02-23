@@ -51,6 +51,10 @@
             this.appLocText = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.addTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.addTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -153,10 +157,10 @@
             // 
             // addDateTimePickStart
             // 
-            this.addDateTimePickStart.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
+            this.addDateTimePickStart.CustomFormat = "";
             this.addDateTimePickStart.Location = new System.Drawing.Point(124, 363);
             this.addDateTimePickStart.Name = "addDateTimePickStart";
-            this.addDateTimePickStart.Size = new System.Drawing.Size(200, 20);
+            this.addDateTimePickStart.Size = new System.Drawing.Size(208, 20);
             this.addDateTimePickStart.TabIndex = 11;
             // 
             // label10
@@ -166,7 +170,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Start Time:";
+            this.label10.Text = "Start Date:";
             // 
             // label11
             // 
@@ -175,7 +179,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 13;
-            this.label11.Text = "End Time:";
+            this.label11.Text = "End Date:";
             // 
             // addDateTimePickEnd
             // 
@@ -247,11 +251,47 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // addTimePickerStart
+            // 
+            this.addTimePickerStart.Location = new System.Drawing.Point(124, 389);
+            this.addTimePickerStart.Name = "addTimePickerStart";
+            this.addTimePickerStart.Size = new System.Drawing.Size(118, 20);
+            this.addTimePickerStart.TabIndex = 23;
+            // 
+            // addTimePickerEnd
+            // 
+            this.addTimePickerEnd.Location = new System.Drawing.Point(449, 389);
+            this.addTimePickerEnd.Name = "addTimePickerEnd";
+            this.addTimePickerEnd.Size = new System.Drawing.Size(118, 20);
+            this.addTimePickerEnd.TabIndex = 24;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(51, 395);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Start Time:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(370, 396);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "End Time:";
+            // 
             // AddAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 558);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.addTimePickerEnd);
+            this.Controls.Add(this.addTimePickerStart);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.appLocText);
@@ -308,5 +348,9 @@
         private System.Windows.Forms.TextBox appLocText;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.DateTimePicker addTimePickerStart;
+        private System.Windows.Forms.DateTimePicker addTimePickerEnd;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
