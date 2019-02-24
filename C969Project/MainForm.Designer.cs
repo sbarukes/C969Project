@@ -151,6 +151,7 @@
             this.delAppButton.TabIndex = 5;
             this.delAppButton.Text = "Delete";
             this.delAppButton.UseVisualStyleBackColor = true;
+            this.delAppButton.Click += new System.EventHandler(this.delAppButton_Click);
             // 
             // upAppButton
             // 
@@ -160,6 +161,7 @@
             this.upAppButton.TabIndex = 4;
             this.upAppButton.Text = "Update";
             this.upAppButton.UseVisualStyleBackColor = true;
+            this.upAppButton.Click += new System.EventHandler(this.upAppButton_Click);
             // 
             // addAppButton
             // 
@@ -209,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1475, 891);
             this.Controls.Add(this.calLabel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

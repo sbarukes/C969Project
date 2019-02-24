@@ -132,17 +132,18 @@ namespace C969Project
             string sqlFormattedDateEnd = end.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string sqlFormattedDateStart = start.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string sqlFormattedDateAdd = dateToAdd.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string update = $"UPDATE appointment /n" +
-                $"SET title = '{title}', /n" +
-                $"description = '{description}', /n" +
-                $"location = '{location}', /n" +
-                $"contact = '{contact}', /n" +
-                $"url = '{url}', /n" +
-                $"start = '{sqlFormattedDateStart}', /n" +
-                $"end = '{sqlFormattedDateEnd}', /n" +
-                $"lastUpdate = '{sqlFormattedDateAdd}', /n" +
-                $"lastUpdateBy = 'test', /n" +
-                $"type = '{type}'";
+            string update = $"UPDATE appointment " +
+                $"SET title = '{title}', " +
+                $"description = '{description}', " +
+                $"location = '{location}', " +
+                $"contact = '{contact}', " +
+                $"url = '{url}', " +
+                $"start = '{sqlFormattedDateStart}', " +
+                $"end = '{sqlFormattedDateEnd}', " +
+                $"lastUpdate = '{sqlFormattedDateAdd}', " +
+                $"lastUpdateBy = 'test', " +
+                $"type = '{type}' " +
+                $"WHERE appointmentId = '{appID}'";
 
             MySqlCommand com = new MySqlCommand(update, con);
             con.Open();

@@ -29,6 +29,19 @@ namespace C969Project
         {
             DateTime dateTimeToUploadStart = addDateTimePickStart.Value.Date + addTimePickerStart.Value.TimeOfDay;
             DateTime dateTimeToUploadEnd = addDateTimePickEnd.Value.Date + addTimePickerEnd.Value.TimeOfDay;
+
+            Data.addAppointment(Convert.ToInt32(cusIdText.Text),
+                appTitleText.Text,
+                appDescText.Text,
+                appLocText.Text,
+                appContactText.Text,
+                appURLText.Text,
+                dateTimeToUploadStart,
+                dateTimeToUploadEnd,
+                appTypeText.Text,
+                Data.getCurrentUser());
+
+            this.Close();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

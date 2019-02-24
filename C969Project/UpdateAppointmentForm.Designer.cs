@@ -55,6 +55,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.updateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.updateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.appIDText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -283,11 +285,30 @@
             this.updateTimePickerStart.Size = new System.Drawing.Size(118, 20);
             this.updateTimePickerStart.TabIndex = 33;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(382, 104);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 13);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Appointment ID:";
+            // 
+            // appIDText
+            // 
+            this.appIDText.Enabled = false;
+            this.appIDText.Location = new System.Drawing.Point(479, 101);
+            this.appIDText.Name = "appIDText";
+            this.appIDText.Size = new System.Drawing.Size(55, 20);
+            this.appIDText.TabIndex = 38;
+            // 
             // UpdateAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 491);
+            this.Controls.Add(this.appIDText);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.updateTimePickerEnd);
@@ -331,26 +352,28 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox cusIdText;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox appTitleText;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox appTypeText;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox appURLText;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox appDescText;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox appContactText;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox appLocText;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker updateDateTimePickStart;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker updateDateTimePickEnd;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker updateTimePickerEnd;
-        private System.Windows.Forms.DateTimePicker updateTimePickerStart;
+        private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox appIDText;
+        public System.Windows.Forms.TextBox appTitleText;
+        public System.Windows.Forms.TextBox appTypeText;
+        public System.Windows.Forms.TextBox appURLText;
+        public System.Windows.Forms.TextBox appDescText;
+        public System.Windows.Forms.TextBox appContactText;
+        public System.Windows.Forms.TextBox appLocText;
+        public System.Windows.Forms.DateTimePicker updateDateTimePickStart;
+        public System.Windows.Forms.DateTimePicker updateDateTimePickEnd;
+        public System.Windows.Forms.DateTimePicker updateTimePickerEnd;
+        public System.Windows.Forms.DateTimePicker updateTimePickerStart;
     }
 }
