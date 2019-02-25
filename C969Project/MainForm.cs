@@ -14,6 +14,8 @@ namespace C969Project
 {
     public partial class MainForm : Form
     {
+        DataSet calDS;
+
         public MainForm()
         {
             InitializeComponent();
@@ -132,7 +134,7 @@ namespace C969Project
         {
             string calCom = $"SELECT        appointment.appointmentId, customer.customerName, customer.customerId, appointment.title, appointment.description, appointment.location, appointment.contact, appointment.start, appointment.end, appointment.type FROM appointment INNER JOIN customer ON appointment.customerId = customer.customerId INNER JOIN `user` ON appointment.userId = `user`.userId";
             MySqlDataAdapter calDA = new MySqlDataAdapter(calCom, Data.getConnection());
-            DataSet calDS = new DataSet();
+            calDS = new DataSet();
             Data.getConnection().Open();
             calDA.Fill(calDS);
 
@@ -150,6 +152,24 @@ namespace C969Project
                 row.Cells[8].Value = localEndTime;
             }
             
+        }
+
+        private void radioButtons_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+            EnumerableRowCollection<DataRow> query;
+
+            //lambda expressions reduce the need for more if/else statements by 
+            if (weekButton.Checked)
+            {
+                query = calDS.Tables[0].AsEnumerable().Where(z => (DateTime)z.ItemArray[7] >= DateTime.Today && (DateTime)z.ItemArray[7] <= DateTime.Today.AddDays(7));
+            }
+            else
+            {
+                query = calDS.Tables[0].AsEnumerable().Where(z => (DateTime)z.ItemArray[7] >= DateTime.Today && (DateTime)z.ItemArray[7] <= DateTime.Today.AddDays(30));
+            }
+            DataTable dt = query.CopyToDataTable();
+            calDataView.DataSource = dt;
         }
     }
 }

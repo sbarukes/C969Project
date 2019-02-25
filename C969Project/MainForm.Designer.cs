@@ -44,12 +44,16 @@
             this.calDataView = new System.Windows.Forms.DataGridView();
             this.calLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.monthButton = new System.Windows.Forms.RadioButton();
+            this.weekButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calDataView)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
@@ -201,11 +205,46 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.calDataView);
             this.panel3.Location = new System.Drawing.Point(891, 210);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(533, 379);
             this.panel3.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.monthButton);
+            this.panel4.Controls.Add(this.weekButton);
+            this.panel4.Location = new System.Drawing.Point(42, 186);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 100);
+            this.panel4.TabIndex = 1;
+            // 
+            // monthButton
+            // 
+            this.monthButton.AutoSize = true;
+            this.monthButton.Location = new System.Drawing.Point(16, 58);
+            this.monthButton.Name = "monthButton";
+            this.monthButton.Size = new System.Drawing.Size(87, 17);
+            this.monthButton.TabIndex = 1;
+            this.monthButton.TabStop = true;
+            this.monthButton.Text = "Next 30 days";
+            this.monthButton.UseVisualStyleBackColor = true;
+            this.monthButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
+            // 
+            // weekButton
+            // 
+            this.weekButton.AutoSize = true;
+            this.weekButton.Location = new System.Drawing.Point(16, 16);
+            this.weekButton.Name = "weekButton";
+            this.weekButton.Size = new System.Drawing.Size(81, 17);
+            this.weekButton.TabIndex = 0;
+            this.weekButton.TabStop = true;
+            this.weekButton.Text = "Next 7 days";
+            this.weekButton.UseVisualStyleBackColor = true;
+            this.weekButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // MainForm
             // 
@@ -228,6 +267,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calDataView)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +292,8 @@
         private System.Windows.Forms.Button delAppButton;
         private System.Windows.Forms.Button upAppButton;
         private System.Windows.Forms.Button addAppButton;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton monthButton;
+        private System.Windows.Forms.RadioButton weekButton;
     }
 }

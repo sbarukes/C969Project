@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,14 @@ namespace C969Project
                 }
                 MainForm mf = new MainForm();
                 mf.ShowDialog();
+
+                //Logs user activity in debug/log.txt
+                using (StreamWriter streamWriter = new StreamWriter("log.txt", true))
+                {
+                    streamWriter.WriteLine(usernameText.Text);
+                    streamWriter.WriteLine(DateTime.Now.ToString());
+                }
+
                 this.Close();
             }
             else

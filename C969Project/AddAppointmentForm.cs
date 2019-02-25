@@ -30,7 +30,12 @@ namespace C969Project
             DateTime dateTimeToUploadStart = addDateTimePickStart.Value.Date + addTimePickerStart.Value.TimeOfDay;
             DateTime dateTimeToUploadEnd = addDateTimePickEnd.Value.Date + addTimePickerEnd.Value.TimeOfDay;
 
-            Data.addAppointment(Convert.ToInt32(cusIdText.Text),
+            TimeSpan businessStart = TimeSpan.Parse("08:00");
+            TimeSpan businessEnd = TimeSpan.Parse("17:00");
+
+            if((dateTimeToUploadStart.TimeOfDay > businessStart) && (dateTimeToUploadStart.TimeOfDay < businessEnd) &&(dateTimeToUploadEnd.TimeOfDay > businessStart) && (dateTimeToUploadEnd.TimeOfDay < businessEnd))
+            {
+                Data.addAppointment(Convert.ToInt32(cusIdText.Text),
                 appTitleText.Text,
                 appDescText.Text,
                 appLocText.Text,
@@ -41,7 +46,13 @@ namespace C969Project
                 appTypeText.Text,
                 Data.getCurrentUser());
 
-            this.Close();
+                this.Close();
+            }
+            else
+            {
+                Exception ex = new Exception("Time must be between normal business hours.");
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
