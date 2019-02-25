@@ -26,6 +26,8 @@ namespace C969Project
             retrieveCusDB();
 
             retriveCalDB();
+
+            retrieveReminder(DateTime.Now);
         }
 
         private void cusDataView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -151,7 +153,22 @@ namespace C969Project
                 DateTime localEndTime = endDateTime.ToLocalTime();
                 row.Cells[8].Value = localEndTime;
             }
-            
+
+        }
+
+        public void retrieveReminder(DateTime now)
+        {
+            //Lambda Expression removes need for looping or if/else statements to check if an appointment is within 15 minutes
+            var query = calDS.Tables[0].AsEnumerable().Where(z => (DateTime)z.ItemArray[7] >= DateTime.Now && (DateTime)z.ItemArray[7] <= DateTime.Now.AddMinutes(15));
+
+            List<DataRow> ls = query.ToList();
+            if(ls.Count > 0)
+            {
+                foreach(DataRow row in ls)
+                {
+                    MessageBox.Show($"You have an appointment at {row.ItemArray[7]}");
+                }
+            }
         }
 
         private void radioButtons_CheckedChanged(object sender, EventArgs e)

@@ -108,11 +108,11 @@ namespace C969Project
         {
             MySqlConnection con = getConnection();
             DateTime dateToAdd = DateTime.Now;
-            start.ToUniversalTime();
-            end.ToUniversalTime();
+            DateTime startUni = start.ToUniversalTime();
+            DateTime endUni = end.ToUniversalTime();
 
-            string sqlFormattedDateEnd = end.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string sqlFormattedDateStart = start.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateEnd = endUni.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateStart = startUni.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string sqlFormattedDateAdd = dateToAdd.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string add = $"INSERT INTO appointment(appointmentId, customerId, title, description, location, contact, url, start, end, createDate, createdBy, lastUpdate, lastUpdateBy, type, userId) VALUES ('{createNewID("appointment")}', '{cusid}', '{title}', '{description}', '{location}', '{contact}', '{url}', '{sqlFormattedDateStart}', '{sqlFormattedDateEnd}', '{sqlFormattedDateAdd}', 'test', '{sqlFormattedDateAdd}', 'test', '{type}', '{userid}')";
 
@@ -126,11 +126,11 @@ namespace C969Project
         {
             MySqlConnection con = getConnection();
             DateTime dateToAdd = DateTime.Now;
-            start.ToUniversalTime();
-            end.ToUniversalTime();
+            DateTime startUni = start.ToUniversalTime();
+            DateTime endUni = end.ToUniversalTime();
 
-            string sqlFormattedDateEnd = end.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string sqlFormattedDateStart = start.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateEnd = endUni.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sqlFormattedDateStart = startUni.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string sqlFormattedDateAdd = dateToAdd.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string update = $"UPDATE appointment " +
                 $"SET title = '{title}', " +
