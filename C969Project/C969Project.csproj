@@ -59,6 +59,24 @@
     <Compile Include="AddCusForm.Designer.cs">
       <DependentUpon>AddCusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentsForm.Designer.cs">
+      <DependentUpon>AppointmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultantSchedules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultantSchedules.Designer.cs">
+      <DependentUpon>ConsultantSchedules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersCityForm.Designer.cs">
+      <DependentUpon>CustomersCityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +109,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCusForm.resx">
       <DependentUpon>AddCusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentsForm.resx">
+      <DependentUpon>AppointmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultantSchedules.resx">
+      <DependentUpon>ConsultantSchedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersCityForm.resx">
+      <DependentUpon>CustomersCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

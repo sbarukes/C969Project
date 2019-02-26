@@ -158,7 +158,7 @@ namespace C969Project
 
         public void retrieveReminder(DateTime now)
         {
-            //Lambda Expression removes need for looping or if/else statements to check if an appointment is within 15 minutes
+            //Lambda Expression 1 removes need for looping or if/else statements to check if an appointment is within 15 minutes
             var query = calDS.Tables[0].AsEnumerable().Where(z => (DateTime)z.ItemArray[7] >= DateTime.Now && (DateTime)z.ItemArray[7] <= DateTime.Now.AddMinutes(15));
 
             List<DataRow> ls = query.ToList();
@@ -176,7 +176,7 @@ namespace C969Project
             RadioButton radioButton = sender as RadioButton;
             EnumerableRowCollection<DataRow> query;
 
-            //lambda expressions reduce the need for more if/else statements by 
+            //lambda expressions 2 reduce the need for more if/else statements by 
             if (weekButton.Checked)
             {
                 query = calDS.Tables[0].AsEnumerable().Where(z => (DateTime)z.ItemArray[7] >= DateTime.Today && (DateTime)z.ItemArray[7] <= DateTime.Today.AddDays(7));
@@ -187,6 +187,25 @@ namespace C969Project
             }
             DataTable dt = query.CopyToDataTable();
             calDataView.DataSource = dt;
+        }
+
+        //Report Button Methods are Below
+        private void typeReport_Click(object sender, EventArgs e)
+        {
+            AppointmentsForm appForm = new AppointmentsForm();
+            appForm.ShowDialog();
+        }
+
+        private void scheduleReport_Click(object sender, EventArgs e)
+        {
+            ConsultantSchedules schedulesForm = new ConsultantSchedules();
+            schedulesForm.ShowDialog();
+        }
+
+        private void cityReport_Click(object sender, EventArgs e)
+        {
+            CustomersCityForm cusCityForm = new CustomersCityForm();
+            cusCityForm.ShowDialog();
         }
     }
 }

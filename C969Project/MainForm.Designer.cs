@@ -47,6 +47,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.monthButton = new System.Windows.Forms.RadioButton();
             this.weekButton = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.typeReport = new System.Windows.Forms.Button();
+            this.scheduleReport = new System.Windows.Forms.Button();
+            this.cityReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -54,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.calDataView)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
@@ -88,6 +93,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.delCusButton);
             this.panel1.Controls.Add(this.upCusButton);
             this.panel1.Controls.Add(this.addCusButton);
@@ -138,6 +144,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.delAppButton);
             this.panel2.Controls.Add(this.upAppButton);
             this.panel2.Controls.Add(this.addAppButton);
@@ -205,6 +212,7 @@
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.calDataView);
             this.panel3.Location = new System.Drawing.Point(891, 210);
@@ -246,11 +254,53 @@
             this.weekButton.UseVisualStyleBackColor = true;
             this.weekButton.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.cityReport);
+            this.panel5.Controls.Add(this.scheduleReport);
+            this.panel5.Controls.Add(this.typeReport);
+            this.panel5.Location = new System.Drawing.Point(891, 637);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(388, 219);
+            this.panel5.TabIndex = 8;
+            // 
+            // typeReport
+            // 
+            this.typeReport.Location = new System.Drawing.Point(59, 34);
+            this.typeReport.Name = "typeReport";
+            this.typeReport.Size = new System.Drawing.Size(169, 23);
+            this.typeReport.TabIndex = 0;
+            this.typeReport.Text = "Type of Appointments Report";
+            this.typeReport.UseVisualStyleBackColor = true;
+            this.typeReport.Click += new System.EventHandler(this.typeReport_Click);
+            // 
+            // scheduleReport
+            // 
+            this.scheduleReport.Location = new System.Drawing.Point(59, 95);
+            this.scheduleReport.Name = "scheduleReport";
+            this.scheduleReport.Size = new System.Drawing.Size(209, 23);
+            this.scheduleReport.TabIndex = 1;
+            this.scheduleReport.Text = "Ordered Schedule For Each Consultant";
+            this.scheduleReport.UseVisualStyleBackColor = true;
+            this.scheduleReport.Click += new System.EventHandler(this.scheduleReport_Click);
+            // 
+            // cityReport
+            // 
+            this.cityReport.Location = new System.Drawing.Point(59, 148);
+            this.cityReport.Name = "cityReport";
+            this.cityReport.Size = new System.Drawing.Size(103, 23);
+            this.cityReport.TabIndex = 2;
+            this.cityReport.Text = "Customers by City";
+            this.cityReport.UseVisualStyleBackColor = true;
+            this.cityReport.Click += new System.EventHandler(this.cityReport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 891);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.calLabel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -269,6 +319,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +346,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RadioButton monthButton;
         private System.Windows.Forms.RadioButton weekButton;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button cityReport;
+        private System.Windows.Forms.Button scheduleReport;
+        private System.Windows.Forms.Button typeReport;
     }
 }
