@@ -48,9 +48,9 @@
             this.monthButton = new System.Windows.Forms.RadioButton();
             this.weekButton = new System.Windows.Forms.RadioButton();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.typeReport = new System.Windows.Forms.Button();
-            this.scheduleReport = new System.Windows.Forms.Button();
             this.cityReport = new System.Windows.Forms.Button();
+            this.scheduleReport = new System.Windows.Forms.Button();
+            this.typeReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -265,15 +265,15 @@
             this.panel5.Size = new System.Drawing.Size(388, 219);
             this.panel5.TabIndex = 8;
             // 
-            // typeReport
+            // cityReport
             // 
-            this.typeReport.Location = new System.Drawing.Point(59, 34);
-            this.typeReport.Name = "typeReport";
-            this.typeReport.Size = new System.Drawing.Size(169, 23);
-            this.typeReport.TabIndex = 0;
-            this.typeReport.Text = "Type of Appointments Report";
-            this.typeReport.UseVisualStyleBackColor = true;
-            this.typeReport.Click += new System.EventHandler(this.typeReport_Click);
+            this.cityReport.Location = new System.Drawing.Point(59, 148);
+            this.cityReport.Name = "cityReport";
+            this.cityReport.Size = new System.Drawing.Size(103, 23);
+            this.cityReport.TabIndex = 2;
+            this.cityReport.Text = "Customers by City";
+            this.cityReport.UseVisualStyleBackColor = true;
+            this.cityReport.Click += new System.EventHandler(this.cityReport_Click);
             // 
             // scheduleReport
             // 
@@ -285,15 +285,15 @@
             this.scheduleReport.UseVisualStyleBackColor = true;
             this.scheduleReport.Click += new System.EventHandler(this.scheduleReport_Click);
             // 
-            // cityReport
+            // typeReport
             // 
-            this.cityReport.Location = new System.Drawing.Point(59, 148);
-            this.cityReport.Name = "cityReport";
-            this.cityReport.Size = new System.Drawing.Size(103, 23);
-            this.cityReport.TabIndex = 2;
-            this.cityReport.Text = "Customers by City";
-            this.cityReport.UseVisualStyleBackColor = true;
-            this.cityReport.Click += new System.EventHandler(this.cityReport_Click);
+            this.typeReport.Location = new System.Drawing.Point(59, 34);
+            this.typeReport.Name = "typeReport";
+            this.typeReport.Size = new System.Drawing.Size(169, 23);
+            this.typeReport.TabIndex = 0;
+            this.typeReport.Text = "Type of Appointments Report";
+            this.typeReport.UseVisualStyleBackColor = true;
+            this.typeReport.Click += new System.EventHandler(this.typeReport_Click);
             // 
             // MainForm
             // 
@@ -310,6 +310,7 @@
             this.Controls.Add(this.title);
             this.Name = "MainForm";
             this.Text = "Appointment Scheduler";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).EndInit();

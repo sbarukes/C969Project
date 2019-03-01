@@ -23,23 +23,14 @@ namespace C969Project
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            retrieveCusDB();
-
-            retriveCalDB();
+            dbQueries();
 
             retrieveReminder(DateTime.Now);
         }
 
         private void cusDataView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string appCom = $"SELECT        appointment.appointmentId, customer.customerName, customer.customerId, appointment.title, appointment.description, appointment.location, appointment.contact, appointment.start, appointment.end, appointment.type, appointment.url FROM appointment INNER JOIN customer ON appointment.customerId = customer.customerId INNER JOIN `user` ON appointment.userId = `user`.userId WHERE customer.customerId = '{cusDataView.CurrentRow.Cells[0].Value}'";
-            MySqlDataAdapter appDA = new MySqlDataAdapter(appCom, Data.getConnection());
-            DataSet appDS = new DataSet();
-            Data.getConnection().Open();
-            appDA.Fill(appDS);
-
-            appDataGridView.DataSource = appDS.Tables[0];
-            Data.getConnection().Close();
+            retrieveAppDB();
 
             foreach (DataGridViewRow row in appDataGridView.Rows)
             {
@@ -81,6 +72,8 @@ namespace C969Project
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
+
+            dbQueries();
         }
 
         private void addAppButton_Click(object sender, EventArgs e)
@@ -119,6 +112,8 @@ namespace C969Project
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
+
+            dbQueries();
         }
 
         public void retrieveCusDB()
@@ -156,6 +151,17 @@ namespace C969Project
 
         }
 
+        public void retrieveAppDB() {
+            string appCom = $"SELECT        appointment.appointmentId, customer.customerName, customer.customerId, appointment.title, appointment.description, appointment.location, appointment.contact, appointment.start, appointment.end, appointment.type, appointment.url FROM appointment INNER JOIN customer ON appointment.customerId = customer.customerId INNER JOIN `user` ON appointment.userId = `user`.userId WHERE customer.customerId = '{cusDataView.CurrentRow.Cells[0].Value}'";
+            MySqlDataAdapter appDA = new MySqlDataAdapter(appCom, Data.getConnection());
+            DataSet appDS = new DataSet();
+            Data.getConnection().Open();
+            appDA.Fill(appDS);
+
+            appDataGridView.DataSource = appDS.Tables[0];
+            Data.getConnection().Close();
+        }
+
         public void retrieveReminder(DateTime now)
         {
             //Lambda Expression 1 removes need for looping or if/else statements to check if an appointment is within 15 minutes
@@ -171,6 +177,7 @@ namespace C969Project
             }
         }
 
+        //Controls Calendar DataGridView
         private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioButton = sender as RadioButton;
@@ -206,6 +213,20 @@ namespace C969Project
         {
             CustomersCityForm cusCityForm = new CustomersCityForm();
             cusCityForm.ShowDialog();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            dbQueries();
+        }
+
+        public void dbQueries()
+        {
+            retrieveCusDB();
+
+            retriveCalDB();
+
+            retrieveAppDB();
         }
     }
 }
