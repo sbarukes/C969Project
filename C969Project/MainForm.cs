@@ -162,6 +162,7 @@ namespace C969Project
             Data.getConnection().Close();
         }
 
+        //Method that checks for appointments based on login
         public void retrieveReminder(DateTime now)
         {
             //Lambda Expression 1 removes need for looping or if/else statements to check if an appointment is within 15 minutes
