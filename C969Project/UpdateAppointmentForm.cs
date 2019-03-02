@@ -33,7 +33,7 @@ namespace C969Project
             TimeSpan businessStart = TimeSpan.Parse("08:00");
             TimeSpan businessEnd = TimeSpan.Parse("17:00");
 
-            bool overlapCheck = Data.checkCalandar(dateTimeToUploadStart, dateTimeToUploadEnd); DataSet calds = Data.getCalandarSet();
+            bool overlapCheck = Data.checkCalandar(dateTimeToUploadStart, dateTimeToUploadEnd, Convert.ToInt32(appIDText.Text));
 
             if ((dateTimeToUploadStart.TimeOfDay > businessStart) && (dateTimeToUploadStart.TimeOfDay < businessEnd) && (dateTimeToUploadEnd.TimeOfDay > businessStart) && (dateTimeToUploadEnd.TimeOfDay < businessEnd)) {
                 if (!overlapCheck)

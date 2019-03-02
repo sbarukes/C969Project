@@ -163,13 +163,13 @@ namespace C969Project
         }
 
         //Method to check for overlapping times
-        static public bool checkCalandar(DateTime overlapCheckStart, DateTime overlapCheckEnd)
+        static public bool checkCalandar(DateTime overlapCheckStart, DateTime overlapCheckEnd, int appID)
         {
             foreach(DataTable table in calandarDataset.Tables)
             {
                 foreach(DataRow row in table.Rows)
                 {
-                    if(((DateTime)row.ItemArray[7] >= overlapCheckStart && (DateTime)row.ItemArray[7] <= overlapCheckEnd) || ((DateTime)row.ItemArray[8] >= overlapCheckStart && (DateTime)row.ItemArray[8] <= overlapCheckEnd))
+                    if((((DateTime)row.ItemArray[7] >= overlapCheckStart && (DateTime)row.ItemArray[7] <= overlapCheckEnd) || ((DateTime)row.ItemArray[8] >= overlapCheckStart && (DateTime)row.ItemArray[8] <= overlapCheckEnd)) && (Convert.ToInt32(row.ItemArray[0]) != appID))
                     {
                         return true;
                     }
