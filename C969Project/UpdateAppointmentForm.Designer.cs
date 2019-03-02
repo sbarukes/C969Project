@@ -47,8 +47,6 @@
             this.appLocText = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.updateDateTimePickStart = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.updateDateTimePickEnd = new System.Windows.Forms.DateTimePicker();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -216,23 +214,6 @@
             this.updateDateTimePickStart.Size = new System.Drawing.Size(200, 20);
             this.updateDateTimePickStart.TabIndex = 28;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(379, 379);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "End Date:";
-            // 
-            // updateDateTimePickEnd
-            // 
-            this.updateDateTimePickEnd.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
-            this.updateDateTimePickEnd.Location = new System.Drawing.Point(461, 373);
-            this.updateDateTimePickEnd.Name = "updateDateTimePickEnd";
-            this.updateDateTimePickEnd.Size = new System.Drawing.Size(200, 20);
-            this.updateDateTimePickEnd.TabIndex = 30;
-            // 
             // saveBtn
             // 
             this.saveBtn.Location = new System.Drawing.Point(396, 456);
@@ -315,8 +296,6 @@
             this.Controls.Add(this.updateTimePickerStart);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.updateDateTimePickEnd);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.updateDateTimePickStart);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.appLocText);
@@ -358,7 +337,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label13;
@@ -372,7 +350,6 @@
         public System.Windows.Forms.TextBox appContactText;
         public System.Windows.Forms.TextBox appLocText;
         public System.Windows.Forms.DateTimePicker updateDateTimePickStart;
-        public System.Windows.Forms.DateTimePicker updateDateTimePickEnd;
         public System.Windows.Forms.DateTimePicker updateTimePickerEnd;
         public System.Windows.Forms.DateTimePicker updateTimePickerStart;
     }

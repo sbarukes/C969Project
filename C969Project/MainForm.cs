@@ -14,7 +14,8 @@ namespace C969Project
 {
     public partial class MainForm : Form
     {
-        DataSet calDS;
+        public static DataSet calDS;
+        DataRow[] calArray;
 
         public MainForm()
         {
@@ -98,7 +99,6 @@ namespace C969Project
             upAppForm.appURLText.Text = appDataGridView.CurrentRow.Cells[10].Value.ToString();
             upAppForm.updateDateTimePickStart.Value = (DateTime)appDataGridView.CurrentRow.Cells[7].Value;
             upAppForm.updateTimePickerStart.Value = (DateTime)appDataGridView.CurrentRow.Cells[7].Value;
-            upAppForm.updateDateTimePickEnd.Value = (DateTime)appDataGridView.CurrentRow.Cells[8].Value;
             upAppForm.updateTimePickerEnd.Value = (DateTime)appDataGridView.CurrentRow.Cells[8].Value;
 
             upAppForm.ShowDialog();
@@ -134,7 +134,7 @@ namespace C969Project
             calDS = new DataSet();
             Data.getConnection().Open();
             calDA.Fill(calDS);
-
+            Data.setCalendarSet(calDS);
             calDataView.DataSource = calDS.Tables[0];
             Data.getConnection().Close();
 
@@ -193,8 +193,22 @@ namespace C969Project
             {
                 query = calDS.Tables[0].AsEnumerable().Where(z => (DateTime)z.ItemArray[7] >= DateTime.Today && (DateTime)z.ItemArray[7] <= DateTime.Today.AddDays(30));
             }
-            DataTable dt = query.CopyToDataTable();
-            calDataView.DataSource = dt;
+            try
+            {
+                DataTable dt = query.CopyToDataTable();
+                calDataView.DataSource = dt;
+            }
+            catch(InvalidOperationException ioe)
+            {
+                if (weekButton.Checked)
+                {
+                    MessageBox.Show("There are no appointments in the next 7 days!");
+                }
+                else
+                {
+                    MessageBox.Show("There are no appointments in the next 30 days!");
+                }
+            }
         }
 
         //Report Button Methods are Below
@@ -228,6 +242,10 @@ namespace C969Project
             retriveCalDB();
 
             retrieveAppDB();
+
+            calArray = new DataRow[10000];
+            calDS.Tables[0].Rows.CopyTo(calArray, 0);
+            
         }
     }
 }

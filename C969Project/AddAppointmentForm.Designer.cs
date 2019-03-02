@@ -41,8 +41,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.addDateTimePickStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.addDateTimePickEnd = new System.Windows.Forms.DateTimePicker();
             this.appTitleText = new System.Windows.Forms.TextBox();
             this.appTypeText = new System.Windows.Forms.TextBox();
             this.appURLText = new System.Windows.Forms.TextBox();
@@ -172,23 +170,6 @@
             this.label10.TabIndex = 12;
             this.label10.Text = "Start Date:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(370, 369);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "End Date:";
-            // 
-            // addDateTimePickEnd
-            // 
-            this.addDateTimePickEnd.CustomFormat = "\"MM/dd/yyyy hh:mm:ss\"";
-            this.addDateTimePickEnd.Location = new System.Drawing.Point(449, 363);
-            this.addDateTimePickEnd.Name = "addDateTimePickEnd";
-            this.addDateTimePickEnd.Size = new System.Drawing.Size(200, 20);
-            this.addDateTimePickEnd.TabIndex = 14;
-            // 
             // appTitleText
             // 
             this.appTitleText.Location = new System.Drawing.Point(223, 206);
@@ -300,8 +281,6 @@
             this.Controls.Add(this.appURLText);
             this.Controls.Add(this.appTypeText);
             this.Controls.Add(this.appTitleText);
-            this.Controls.Add(this.addDateTimePickEnd);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.addDateTimePickStart);
             this.Controls.Add(this.label9);
@@ -338,8 +317,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker addDateTimePickStart;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker addDateTimePickEnd;
         private System.Windows.Forms.TextBox appTitleText;
         private System.Windows.Forms.TextBox appTypeText;
         private System.Windows.Forms.TextBox appURLText;

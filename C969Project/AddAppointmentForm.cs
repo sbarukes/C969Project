@@ -28,25 +28,35 @@ namespace C969Project
         private void saveBtn_Click(object sender, EventArgs e)
         {
             DateTime dateTimeToUploadStart = addDateTimePickStart.Value.Date + addTimePickerStart.Value.TimeOfDay;
-            DateTime dateTimeToUploadEnd = addDateTimePickEnd.Value.Date + addTimePickerEnd.Value.TimeOfDay;
+            DateTime dateTimeToUploadEnd = addDateTimePickStart.Value.Date + addTimePickerEnd.Value.TimeOfDay;
 
             TimeSpan businessStart = TimeSpan.Parse("08:00");
             TimeSpan businessEnd = TimeSpan.Parse("17:00");
 
+            bool overlapCheck = Data.checkCalandar(dateTimeToUploadStart, dateTimeToUploadEnd);
+
             if((dateTimeToUploadStart.TimeOfDay > businessStart) && (dateTimeToUploadStart.TimeOfDay < businessEnd) &&(dateTimeToUploadEnd.TimeOfDay > businessStart) && (dateTimeToUploadEnd.TimeOfDay < businessEnd))
             {
-                Data.addAppointment(Convert.ToInt32(cusIdText.Text),
-                appTitleText.Text,
-                appDescText.Text,
-                appLocText.Text,
-                appContactText.Text,
-                appURLText.Text,
-                dateTimeToUploadStart,
-                dateTimeToUploadEnd,
-                appTypeText.Text,
-                Data.getCurrentUser());
+                if (!overlapCheck)
+                {
+                    Data.addAppointment(Convert.ToInt32(cusIdText.Text),
+                    appTitleText.Text,
+                    appDescText.Text,
+                    appLocText.Text,
+                    appContactText.Text,
+                    appURLText.Text,
+                    dateTimeToUploadStart,
+                    dateTimeToUploadEnd,
+                    appTypeText.Text,
+                    Data.getCurrentUser());
 
-                this.Close();
+                    this.Close();
+                }
+                else
+                {
+                    Exception ex = new Exception("Appointments Overlap");
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {

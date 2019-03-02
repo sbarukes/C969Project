@@ -11,6 +11,7 @@ namespace C969Project
     class Data
     {
         static int currentUserID = 0;
+        static DataSet calandarDataset;
 
         static public MySqlConnection getConnection()
         {
@@ -26,6 +27,16 @@ namespace C969Project
         static public int getCurrentUser()
         {
             return currentUserID;
+        }
+
+        static public void setCalendarSet(DataSet set)
+        {
+            calandarDataset = set;
+        }
+
+        static public DataSet getCalandarSet()
+        {
+            return calandarDataset;
         }
 
         static public int createNewID(string table)
@@ -149,6 +160,22 @@ namespace C969Project
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
+        }
+
+        //Method to check for overlapping times
+        static public bool checkCalandar(DateTime overlapCheckStart, DateTime overlapCheckEnd)
+        {
+            foreach(DataTable table in calandarDataset.Tables)
+            {
+                foreach(DataRow row in table.Rows)
+                {
+                    if(((DateTime)row.ItemArray[7] >= overlapCheckStart && (DateTime)row.ItemArray[7] <= overlapCheckEnd) || ((DateTime)row.ItemArray[8] >= overlapCheckStart && (DateTime)row.ItemArray[8] <= overlapCheckEnd))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
     }

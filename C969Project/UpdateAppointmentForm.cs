@@ -28,23 +28,33 @@ namespace C969Project
         private void saveBtn_Click(object sender, EventArgs e)
         {
             DateTime dateTimeToUploadStart = updateDateTimePickStart.Value.Date + updateTimePickerStart.Value.TimeOfDay;
-            DateTime dateTimeToUploadEnd = updateDateTimePickEnd.Value.Date + updateTimePickerEnd.Value.TimeOfDay;
+            DateTime dateTimeToUploadEnd = updateDateTimePickStart.Value.Date + updateTimePickerEnd.Value.TimeOfDay;
 
             TimeSpan businessStart = TimeSpan.Parse("08:00");
             TimeSpan businessEnd = TimeSpan.Parse("17:00");
 
-            if ((dateTimeToUploadStart.TimeOfDay > businessStart) && (dateTimeToUploadStart.TimeOfDay < businessEnd) && (dateTimeToUploadEnd.TimeOfDay > businessStart) && (dateTimeToUploadEnd.TimeOfDay < businessEnd)) {
-                Data.updateAppointment(Convert.ToInt32(appIDText.Text),
-                    appTitleText.Text,
-                    appDescText.Text,
-                    appLocText.Text,
-                    appContactText.Text,
-                    appURLText.Text,
-                    dateTimeToUploadStart,
-                    dateTimeToUploadEnd,
-                    appTypeText.Text);
+            bool overlapCheck = Data.checkCalandar(dateTimeToUploadStart, dateTimeToUploadEnd); DataSet calds = Data.getCalandarSet();
 
-                this.Close();
+            if ((dateTimeToUploadStart.TimeOfDay > businessStart) && (dateTimeToUploadStart.TimeOfDay < businessEnd) && (dateTimeToUploadEnd.TimeOfDay > businessStart) && (dateTimeToUploadEnd.TimeOfDay < businessEnd)) {
+                if (!overlapCheck)
+                {
+                    Data.updateAppointment(Convert.ToInt32(appIDText.Text),
+                        appTitleText.Text,
+                        appDescText.Text,
+                        appLocText.Text,
+                        appContactText.Text,
+                        appURLText.Text,
+                        dateTimeToUploadStart,
+                        dateTimeToUploadEnd,
+                        appTypeText.Text);
+
+                    this.Close();
+                }
+                else
+                {
+                    Exception ex = new Exception("Appointments Overlap");
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
