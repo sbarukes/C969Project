@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,10 @@ namespace C969Project
         {
             string username = usernameText.Text;
             string password = passwordText.Text;
+
+            string culture = CultureInfo.CurrentCulture.EnglishName;
+            string country = culture.Substring(culture.IndexOf('(') + 1, culture.LastIndexOf(')') - culture.IndexOf('(') - 1);
+
             MySqlCommand com = new MySqlCommand($"SELECT * FROM user WHERE userName = '{usernameText.Text}' AND password = '{passwordText.Text}'", con);
             con.Open();
             MySqlDataReader read = com.ExecuteReader();
@@ -51,10 +56,15 @@ namespace C969Project
 
                 this.Close();
             }
-            else
+            else if(!read.HasRows && country != "United States")
             {
                 Exception ex = new Exception("The username or password is incorrect!\n" +
                     "Russian: Неверное имя пользователя или пароль");
+                MessageBox.Show(ex.Message);
+            }
+            else if(!read.HasRows && country == "United States")
+            {
+                Exception ex = new Exception("The username or password is incorrect!");
                 MessageBox.Show(ex.Message);
             }
             con.Close();
