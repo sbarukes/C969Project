@@ -51,6 +51,7 @@
             this.cityReport = new System.Windows.Forms.Button();
             this.scheduleReport = new System.Windows.Forms.Button();
             this.typeReport = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -145,6 +146,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.delAppButton);
             this.panel2.Controls.Add(this.upAppButton);
             this.panel2.Controls.Add(this.addAppButton);
@@ -295,6 +297,16 @@
             this.typeReport.UseVisualStyleBackColor = true;
             this.typeReport.Click += new System.EventHandler(this.typeReport_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(419, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Adding an appointment will add for the currently selected customer in the custome" +
+    "r view";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,9 +324,11 @@
             this.Text = "Appointment Scheduler";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cusDataView)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calDataView)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -351,5 +365,6 @@
         private System.Windows.Forms.Button cityReport;
         private System.Windows.Forms.Button scheduleReport;
         private System.Windows.Forms.Button typeReport;
+        private System.Windows.Forms.Label label1;
     }
 }

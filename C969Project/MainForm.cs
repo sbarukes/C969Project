@@ -25,7 +25,10 @@ namespace C969Project
         private void MainForm_Load(object sender, EventArgs e)
         {
             dbQueries();
+        }
 
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
             retrieveReminder(DateTime.Now);
         }
 
