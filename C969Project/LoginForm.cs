@@ -16,6 +16,7 @@ namespace C969Project
     public partial class LoginForm : Form
     {
         MySqlConnection con;
+        Exception ex;
         public LoginForm()
         {
             InitializeComponent();
@@ -24,15 +25,28 @@ namespace C969Project
         private void Form1_Load(object sender, EventArgs e)
         {
             con = Data.getConnection();
+
+            string culture = CultureInfo.CurrentCulture.EnglishName;
+
+            if(culture == "Russian (Russia)")
+            {
+                ex = new Exception("Неверное имя пользователя или пароль!");
+                loginButton.Text = "Авторизоваться";
+                loginLabel.Text = "Пожалуйста, введите ваш логин и пароль, чтобы войти.";
+                usernameLabel.Text = "имя пользователя";
+                passwordLabel.Text = "пароль";
+                this.Text = "Назначение Планировщик";
+            }
+            else
+            {
+                ex = new Exception("The username or password is incorrect!");
+            }
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             string username = usernameText.Text;
             string password = passwordText.Text;
-
-            string culture = CultureInfo.CurrentCulture.EnglishName;
-            string country = culture.Substring(culture.IndexOf('(') + 1, culture.LastIndexOf(')') - culture.IndexOf('(') - 1);
 
             MySqlCommand com = new MySqlCommand($"SELECT * FROM user WHERE userName = '{usernameText.Text}' AND password = '{passwordText.Text}'", con);
             con.Open();
@@ -56,15 +70,8 @@ namespace C969Project
 
                 this.Close();
             }
-            else if(!read.HasRows && country != "United States")
+            else if(!read.HasRows)
             {
-                Exception ex = new Exception("The username or password is incorrect!\n" +
-                    "Russian: Неверное имя пользователя или пароль");
-                MessageBox.Show(ex.Message);
-            }
-            else if(!read.HasRows && country == "United States")
-            {
-                Exception ex = new Exception("The username or password is incorrect!");
                 MessageBox.Show(ex.Message);
             }
             con.Close();
